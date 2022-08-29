@@ -1,0 +1,28 @@
+#creating virtual environment
+python -m venv venv
+
+#activating virtual environment
+source venv/scripts/activate
+
+#running spider
+scrapy crawl spidername
+
+#scraping site using scrapy shell 
+scrapy shell 'site address'
+
+#using css selectors
+response.css('tagname.classname::text').extract()
+
+#using xpath 
+response.xpath("//tagname[@class='classname']/text()").extract()
+
+#saving the output as json,csv,xml
+scrapy crawl spidername -o items.json
+
+
+#how to activate pipeline
+uncomment from settings
+# ITEM_PIPELINES = {
+#    'quotestutorial.pipelines.QuotestutorialPipeline': 300,
+# }
+
